@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Recette : Aide & Contact</title>
+</head>
+<body>
+    <h1>Page d'Aide & Contact</h1>
+
+    <a href="/">Retourner à l'accueil</a>
+
+    <h2>Liste des URLs possibles</h2>
+
+    <h3>Liste des URLs pour afficher des données</h3>
+    <ul>
+        <li>Pour afficher les recettes : <a href="/recettes">http://localhost:3000/recettes</a></li>
+        <li>Pour afficher les cuisines : <a href="/cuisines">http://localhost:3000/cuisines</a></li>
+        <li>Pour afficher les alergies : <a href="/alergies">http://localhost:3000/alergies</a></li>
+        <li>Pour afficher les objectifs : <a href="/goals">http://localhost:3000/goals</a></li>
+        <li>Pour afficher les ingredients : <a href="/ingredients">http://localhost:3000/ingredients</a></li>
+        <br/>
+
+        <li>Pour afficher les recettes d'une cuisine précises : <a href="/recettes/cuisine_nom/:cuisine_name">http://localhost:3000/recettes/cuisine_nom/:cuisine_name</a></li>
+        <li>Exemple : <a href="/recettes/cuisine_nom/Italienne">http://localhost:3000/recettes/cuisine_nom/Italienne</a></li>
+        <br/>
+
+        <li>Pour afficher les recettes sans allergènes : <a href="/recettes/sans_allergene">http://localhost:3000/recettes/sans_allergene</a></li>
+        <br/>
+
+        <li>Pour afficher les recettes ayant un objectif précis : <a href="/recettes/goal_nom/:goal_name">http://localhost:3000/recettes/goal_nom/:goal_name</a></li>
+        <li>Exemple : <a href="/recettes/goal_nom/Faible en calories">http://localhost:3000/recettes/goal_nom/Faible en calories</a></li>
+        <br/>
+
+        <li>Pour afficher toutes les informations d'une recette précise : <a href="/recettes/all_infos/recette_titre/:recette_name">http://localhost:3000/recettes/all_infos/recette_titre/:recette_name</a></li>
+        <li>Exemple : <a href="/recettes/all_infos/recette_titre/Salade César">http://localhost:3000/recettes/all_infos/recette_titre/Salade César</a></li>
+    </ul>
+
+    <h3>Liste des URLs pour ajouter des données</h3>
+    <ul>
+        <li>Pour ajouter/créer une cuisine : http://localhost:3000/ajouter_cuisine/cuisine_nom/:name</li>
+        <li>Exemple : http://localhost:3000/ajouter_cuisine/cuisine_nom/Irlandaise</li>
+        <br/>
+        <li>Pour ajouter/créer un ingrédient : http://localhost:3000/ajouter_ingredient/ingredient_nom/:new_name/quantite/:new_quantity/unite/:new_unit</li>
+        <li>Exemple : http://localhost:3000/ajouter_ingredient/ingredient_nom/Oeufs/quantite/2/unite/oeuf(s)</li>
+        <br/>
+        <li>Pour ajouter un ingrédient (existant) à une recette : http://localhost:3000/ajouter_ingredient_a_recette/recette_titre/:title_recette/ingredient_nom/:name_ingredient</li>
+        <li>Exemple : http://localhost:3000/ajouter_ingredient_a_recette/recette_titre/Salade César/ingredient_nom/Huile d'olive</li>
+        <br/>
+    </ul>
+
+    <h3>Liste des URLs pour mettre à jour les données</h3>
+    <ul>
+        <li>Pour modifier le nom d'une recette : http://localhost:3000/modif_recette/title/recette_titre/:old_title/recette_nouveau_titre/:new_title</li>
+        <li>Exemple : http://localhost:3000/modif_recette/title/recette_titre/Salade César/recette_nouveau_titre/Salade Italienne</li>
+        <br/>
+        <li>Pour modifier la cuisine d'une recette (à partir d'une cuisine existante) : http://localhost:3000/modif_recette/cuisine/recette_titre/:title/recette_nouvel_cuisine/:new_cuisine</li>
+        <li>Exemple : http://localhost:3000/modif_recette/cuisine/recette_titre/Salade César/recette_nouvel_cuisine/International</li>
+        <br/>
+        <li>Pour modifier l'alérgie d'une recette (à partie d'une alérgie existante) : http://localhost:3000/modif_recette/allergy/recette_titre/:title/recette_nouvel_alergie/:new_allergy</li>
+        <li>Exemple : http://localhost:3000/modif_recette/allergy/recette_titre/Salade César/recette_nouvel_alergie/Gluten</li>
+        <br/>
+        <li>Pour modifier une étape d'une recette (à partie d'une étape existante) : http://localhost:3000/modif_recette/etape/recette_titre/:title/etape_num/:instruction_num/etape_description/:new_etape</li>
+        <li>Exemple : http://localhost:3000/modif_recette/etape/recette_titre/Salade César/etape_num/3/etape_description/Servez avec des croûtons et du parmesan râpé. Régalez-vous !</li>
+        <br/>
+    </ul>
+
+    <h3>Liste des URLs pour supprimer des données</h3>
+    <ul>
+        <li>Pour supprimer un ingrédient d'une recette : supp_ingredient_a_recette/recette_titre/:title_recette/ingredient_nom/:name_ingredient</li>
+        <li>Exemple : http://localhost:3000/supp_ingredient_a_recette/recette_titre/Salade César/ingredient_nom/Tomates</li>
+        <br/>
+        <li>Pour supprimer une cuisine ET modifier les recettes qui avaient cette cuisine : http://localhost:3000/supp_cuisine/cuisine_nom/:name</li>
+        <li>Exemple : http://localhost:3000/supp_cuisine/cuisine_nom/Irlandaise</li>
+        <br/>
+    </ul>
+
+    <p>Pour toute question, vous pouver me contacter à l'adresse suivante : <a href="mailto:aurelie.runser@edu.univ-fcomte.fr">aurelie.runser@edu.univ-fcomte.fr</a></p>
+    
+    <a href="/">Retourner à l'accueil</a>
+</body>
+</html>
